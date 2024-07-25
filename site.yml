@@ -1,0 +1,5 @@
+---
+- name: Example playbook
+  hosts: localhost
+  roles:
+    - role: acme_scm.rhe_firewall_config.run

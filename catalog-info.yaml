@@ -1,0 +1,20 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: acme_scm.rhe_firewall_config
+  description: Configures our RHEL firewalls
+  tags:
+    - ansible
+    - playbook
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: acme-scm/rhel-firewall-config
+  links:
+    - url: https://devspaces.apps.sandbox-m2.ll9k.p1.openshiftapps.com#https://github.com/acme-scm/rhel-firewall-config
+      title: Open Ansible project in OpenShift Dev Spaces
+      icon: web
+spec:
+  type: playbook-project
+  lifecycle: production
+  owner: group:acme-scm/ansible-engineers
