@@ -1,0 +1,21 @@
+---
+- name: Check all windows machines that have MyRegKey in the registry
+  hosts: all
+  tasks:
+    - name: Check if MyRegKey exists in the registry
+      ansible.windows.win_reg_stat:
+        path: HKLM:\SOFTWARE\MyRegKey
+      register: myregkey_exists
+    - name: Add the machine to the inventory
+      ansible.builtin.add_host:
+        name: "{{ inventory_hostname }}"
+        groups: myregkey_machines
+      when: myregkey_exists.exists
+- name: Create an inventory
+  hosts: localhost
+  tasks:
+    - name: Create an inventory file
+      ansible.builtin.template:
+        src: inventory.j2
+        dest: inventory.yml
+        mode: '0644'
