@@ -2,7 +2,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: acme_scm.rhe_firewall_config
+  name: acme_scm.rhel_firewall_config
   description: Configures our RHEL firewalls
   tags:
     - ansible
